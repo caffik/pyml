@@ -38,7 +38,7 @@ class SVDModuleClass(unittest.TestCase):
         model.fit()
 
         x = np.random.rand(3, 10).astype(np.float64)
-        prediction = model.fit_predict(x)
+        model.fit_predict(x)
 
         self.assertEqual(len(model.projections), 2)
 
