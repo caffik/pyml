@@ -19,7 +19,7 @@ jobs:
       with:
         submodules: true
     - name: Build Source Distributions
-      run: pipx run build --sdist
+      run: pipx run build --sdist --python 3.9
 
     - name: Check metadata
       run: pipx run twine check dist/*
