@@ -15,5 +15,4 @@ find_package(Python 3.9
 
 ################
 
-add_subdirectory(scr)
 add_subdirectory(python)

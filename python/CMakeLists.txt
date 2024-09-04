@@ -1,5 +1,19 @@
 include(FetchContent)
 
+###############
+#    libml    #
+###############
+
+FetchContent_Declare(
+        libml
+        GIT_REPOSITORY https://github.com/caffik/libml
+        GIT_TAG        v1.0.0
+)
+
+set(ENABLE_DOCS OFF)
+set(ENABLE_TESTING OFF)
+FetchContent_MakeAvailable(libml)
+
 ################
 #   nanobind   #
 ################
@@ -22,11 +36,14 @@ nanobind_add_module(pyml
     STABLE_ABI
     NB_STATIC
         pyml.cpp
+        cpp/ml.cpp
+        cpp/svd_classifier.cpp
+        cpp/svd_classification_functions.cpp
 )
 
 target_link_libraries(
     pyml
-        PRIVATE svd_classifier_specialization
+        PRIVATE libml::svd_classification
 )
 
 install(TARGETS pyml LIBRARY DESTINATION pyml)
