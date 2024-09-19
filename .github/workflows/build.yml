@@ -1,6 +1,6 @@
 name: Build and Test
 
-#on: [push]
+on: [push]
 
 jobs:
   build:
@@ -9,7 +9,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        platform: [windows-latest, ubuntu-latest]
+        platform: [windows-latest, ubuntu-latest, macos-13, macos-14]
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -36,7 +36,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        platform: [windows-latest, ubuntu-latest]
+        platform: [windows-latest, ubuntu-latest, macos-13, macos-14]
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
