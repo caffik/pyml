@@ -1,3 +1,4 @@
+[![Build and Test](https://github.com/caffik/pyml/actions/workflows/build.yml/badge.svg)](https://github.com/caffik/pyml/actions/workflows/build.yml)
 # pyml
 
 `pyml` is a machine learning library that integrates Python and C++ using `nanobind`.
