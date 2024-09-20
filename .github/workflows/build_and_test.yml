@@ -1,6 +1,9 @@
 name: Build and Test
 
-on: [push]
+on:
+  push:
+    tags-ignore:
+      - '**'
 
 jobs:
   build:
@@ -58,3 +61,5 @@ jobs:
           pip install . --verbose
           pip install numpy
           python -m unittest
+
+
